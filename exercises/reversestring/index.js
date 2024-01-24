@@ -20,7 +20,6 @@ function reverse(str) {
     // return revStr
 
     //solution 3 - using reduce()
-
     return str.split('').reduce((rev,char)=>char + rev, '')
 }
 reverse('abcd')
