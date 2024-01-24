@@ -13,11 +13,15 @@ function reverse(str) {
     
     //solution 2 -  not using reverse()
         //instantiate empty string, iterate over str and add each element to the front of the empty string   
-    let revStr=''
-    for(let char of str){
-        revStr=char+revStr
-    }
-    return revStr
+    // let revStr=''
+    // for(let char of str){
+    //     revStr=char+revStr
+    // }
+    // return revStr
+
+    //solution 3 - using reduce()
+
+    return str.split('').reduce((rev,char)=>char + rev, '')
 }
 reverse('abcd')
 
