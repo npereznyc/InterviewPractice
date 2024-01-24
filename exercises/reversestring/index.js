@@ -6,6 +6,19 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
+    //solution 1 - using reverse()
+        //convert string to array, reverse the array, convert back to string
+    // return str.split('').reverse().join('')
+    
+    //solution 2 -  not using reverse()
+        //instantiate empty string, iterate over str and add each element to the front of the empty string   
+    let revStr=''
+    for(let char of str){
+        revStr=char+revStr
+    }
+    return revStr
+}
+reverse('abcd')
 
 module.exports = reverse;
