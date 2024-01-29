@@ -20,6 +20,18 @@ function chunk(array, size) {
     }
     console.log(result)
     return result
+
+    //alternate solution with slice and a while loop:
+
+    // const result = []
+    // let index = 0
+
+    // while(index<array.length){
+    //     result.push(array.slice(index,index+size))
+    //     index+=size
+    // }
+    // return result
+
 }
 
 chunk([1, 2, 3, 4, 5],3)
