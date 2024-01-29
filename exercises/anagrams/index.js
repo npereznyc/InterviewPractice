@@ -9,41 +9,49 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    //use regEx to eliminate spaces and non alphanumeric characters
-    //toLowercase to conver to all lower case
-    //create object for each string with characters = keys & number of times they appear = values
-    //compare the objects; if they're the same, we have an anagram
     
-    const A = stringA.replace(/[^\w]/g,"").toLowerCase()
-    const B = stringB.replace(/[^\w]/g,"").toLowerCase()
-
-    if(A.length != B.length){
+    //if using helper function:
+    const objA=buildMap(stringA)
+    const objB=buildMap(stringB)
+        
+    if(Object.keys(objA).length!=Object.keys(objB).length){
         return false
     }
 
-    const objA = {}
-    const objB = {}
+    //if not using helper function:
+    // const A = stringA.replace(/[^\w]/g,"").toLowerCase()
+    // const B = stringB.replace(/[^\w]/g,"").toLowerCase()
 
-    // console.log(A, B)
-
-    // if (A === B){
-    //     return true 
+    // if(A.length != B.length){
+    //     return false
     // }
 
-    for(let char of A){
-        objA[char]= objA[char]+1 || 1
-    }
-    for(let char of B){
-        objB[char]= objB[char]+1 || 1
-    }
+    // const objA = {}
+    // const objB = {}
+    
+    // for(let char of A){
+    //     objA[char]= objA[char]+1 || 1
+    // }
+    // for(let char of B){
+    //     objB[char]= objB[char]+1 || 1
+    // }
+
 
     for(let char in objA){
-        if(objA[char]===objB[char]){
-            return true
-        } else {
+        if(objA[char]!=objB[char]){
             return false
         }
     }
+    return true
+}
+
+//helper function:
+function buildMap(str){
+    const charMap = {}
+    for(let char of str.replace(/[^\w]/g,'').toLowerCase()) {
+        charMap[char] = charMap[char]+1 || 1
+    }
+    return charMap
 }
 
 anagrams('One one', 'One one c')
