@@ -11,9 +11,9 @@ function capitalize(str) {
     const arr=str.split(' ')
     const newArr=[]
 
-    for(let i=0;i<arr.length;i++){
-        let capital = arr[i][0].toUpperCase()
-        let rest = arr[i].slice(1)
+    for(let word of arr){
+        let capital = word[0].toUpperCase()
+        let rest = word.slice(1)
         newArr.push(capital+rest)
     }
     return newArr.join(' ')
