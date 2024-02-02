@@ -9,23 +9,23 @@
 
 function palindrome(str) {
     //solution 1 - reversing string and checking if reversed string === str
-    // let revStr=str.split('').reduce((rev, char)=> char+rev, '')
+    let revStr=str.split('').reduce((rev, char)=> char+rev, '')
     // if(revStr === str){
     //     return true
     // } else {
     //     return false
     // }
 
-    //another way to write this comparison:
-    // return revStr === str 
+    //another way to write this comparison so we don't need the whole if statement:
+    return revStr === str 
     // (will return true if it's true and false if it' not)
 
     //solution 2 - using every()
         // checks first element against last element, second element against second to last, and so on.
         //this is not an ideal solution because it checks each pair twice.
-    return str.split('').every((char,index)=> {
-        return char === str[str.length-index-1]
-    })
+    // return str.split('').every((char,index)=> {
+    //     return char === str[str.length-index-1]
+    // })
 }
 
 module.exports = palindrome;
