@@ -11,17 +11,32 @@ function vowels(str) {
     //iterative solution:
 
     //instatiate vowels array
-    //iterate over string
+    //intantiate result at 0
+    //iterate over array; if str contains character of array, increment result
+    //return result
 
-    const vowels=['a','e','i','o','u']
-    let result=0
+    // const vowels=['a','e','i','o','u']
+    // let result=0
 
-    for(let char of vowels){
-        if (str.toLowerCase().includes(char)){
-            result++
-        }
+    // for(let char of vowels){
+    //     if (str.toLowerCase().includes(char)){
+    //         result++
+    //     }
+    // }
+    // return result
+
+    //regex solution:
+
+    const regex=/[aeiou]/gi
+    console.log(str.match(regex))
+
+    if(str.match(regex)){
+        return str.match(regex).length
+    } else {
+        return 0
     }
-    return result
-}
+    // return str.match(regex).length
 
+}
+vowels('bcdfghjkl')
 module.exports = vowels;
