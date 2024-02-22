@@ -28,14 +28,17 @@ function vowels(str) {
     //regex solution:
 
     const regex=/[aeiou]/gi
-    console.log(str.match(regex))
 
-    if(str.match(regex)){
-        return str.match(regex).length
-    } else {
-        return 0
-    }
-    // return str.match(regex).length
+    // if(str.match(regex)){
+    //     return str.match(regex).length
+    // } else {
+    //     return 0
+    // }
+
+    //ternary expression option, rather than if statement:
+    return str.match(regex) ? str.match(regex).length : 0
+
+    //need either the if statement or ternary expression because .match() will return null if there are no matches
 
 }
 vowels('bcdfghjkl')
