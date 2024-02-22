@@ -9,13 +9,21 @@
 //   fib(4) === 3
 
 function fib(n) {
-    const fibArr=[0,1]
+    // const fibArr=[0,1]
 
-    for(let i=1; i<=n; i++){
-        fibArr.push(fibArr[i]+fibArr[i-1])
+    // for(let i=1; i<=n; i++){
+    //     fibArr.push(fibArr[i]+fibArr[i-1])
+    // }
+    // console.log(fibArr)
+    // return fibArr[n]
+
+    //recursive solution:
+
+    if(n<2){
+        return n
     }
-    console.log(fibArr)
-    return fibArr[n]
+
+    return fib(n-1) +fib(n-2)
 }
 
 fib(39)
